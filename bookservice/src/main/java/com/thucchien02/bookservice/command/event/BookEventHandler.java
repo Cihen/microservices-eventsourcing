@@ -25,21 +25,18 @@ public class BookEventHandler {
     @EventHandler
     public void updateBook (BookUpdateEvent event) {
         Optional<Book> oldBook = bookRepository.findById(event.getId());
-        if(oldBook.isPresent()) {
-            Book book = oldBook.get();
+        oldBook.ifPresent(book -> {
             book.setName(event.getName());
             book.setAuthor(event.getAuthor());
             book.setIsReady(event.getIsReady());
 
             bookRepository.save(book);
-        }
+        });
     }
 
     @EventHandler
     public void deleteBook (BookDeleteEvent event) {
         Optional<Book> oldBook = bookRepository.findById(event.getId());
-        if(oldBook.isPresent()) {
-            bookRepository.delete(oldBook.get());
-        }
+        oldBook.ifPresent(book -> bookRepository.delete(book));
     }
 }
