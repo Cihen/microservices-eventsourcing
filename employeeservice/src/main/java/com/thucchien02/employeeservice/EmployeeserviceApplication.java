@@ -1,15 +1,15 @@
-package com.thucchien02.bookservice;
+package com.thucchien02.employeeservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+@SpringBootApplication(scanBasePackages = {"com.thucchien02.employeeservice", "com.thucchien02.commonservice"})
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = {"com.thucchien02.bookservice", "com.thucchien02.commonservice"})
-public class BookserviceApplication {
+public class EmployeeserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BookserviceApplication.class, args);
+		SpringApplication.run(EmployeeserviceApplication.class, args);
 	}
 
 }
