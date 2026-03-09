@@ -5,6 +5,7 @@ import com.thucchien02.employeeservice.command.commands.DeleteEmployeeCommand;
 import com.thucchien02.employeeservice.command.commands.UpdateEmployeeCommand;
 import com.thucchien02.employeeservice.command.model.CreateEmployeeModel;
 import com.thucchien02.employeeservice.command.model.UpdateEmployeeModel;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.validation.Valid;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,6 @@ public class EmployeeCommandController {
         UpdateEmployeeCommand command = new UpdateEmployeeCommand(employeeId,model.getFirstName(),model.getLastName(),model.getKin(),model.getIsDisciplined());
         return commandGateway.sendAndWait(command);
     }
-
 
     @DeleteMapping("/{employeeId}")
     public String deleteEmployee(@PathVariable String employeeId){
