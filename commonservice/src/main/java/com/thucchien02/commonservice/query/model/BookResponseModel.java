@@ -1,4 +1,4 @@
-package com.thucchien02.bookservice.query.model;
+package com.thucchien02.commonservice.query.model;
 
 
 import lombok.AllArgsConstructor;

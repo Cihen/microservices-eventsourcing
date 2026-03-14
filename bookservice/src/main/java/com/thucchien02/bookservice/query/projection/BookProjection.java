@@ -2,9 +2,9 @@ package com.thucchien02.bookservice.query.projection;
 
 import com.thucchien02.bookservice.command.data.Book;
 import com.thucchien02.bookservice.command.data.BookRepository;
-import com.thucchien02.bookservice.query.model.BookResponseModel;
+import com.thucchien02.commonservice.query.model.BookResponseModel;
 import com.thucchien02.bookservice.query.queries.GetAllBookQuery;
-import com.thucchien02.bookservice.query.queries.GetBookDetailQuery;
+import com.thucchien02.commonservice.query.queries.GetBookDetailQuery;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
