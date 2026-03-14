@@ -41,15 +41,15 @@ public class BorrowingAggregate {
     }
 
     @EventSourcingHandler
-    public void on(BorrowingDeletedEvent event) {
-        this.id = event.getId();
-    }
-
-    @EventSourcingHandler
     public void on(BorrowingCreatedEvent event){
         this.id = event.getId();
         this.bookId = event.getBookId();
         this.employeeId = event.getEmployeeId();
         this.borrowingDate = event.getBorrowingDate();
+    }
+
+    @EventSourcingHandler
+    public void on(BorrowingDeletedEvent event) {
+        this.id = event.getId();
     }
 }
