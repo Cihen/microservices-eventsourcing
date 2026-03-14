@@ -1,8 +1,8 @@
 package com.thucchien02.bookservice.query.controller;
 
-import com.thucchien02.bookservice.query.model.BookResponseModel;
+import com.thucchien02.commonservice.query.model.BookResponseModel;
 import com.thucchien02.bookservice.query.queries.GetAllBookQuery;
-import com.thucchien02.bookservice.query.queries.GetBookDetailQuery;
+import com.thucchien02.commonservice.query.queries.GetBookDetailQuery;
 import com.thucchien02.commonservice.service.KafkaService;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
