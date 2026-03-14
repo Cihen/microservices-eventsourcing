@@ -1,11 +1,10 @@
 package com.thucchien02.employeeservice.query.projection;
 
-import com.thucchien02.commonservice.model.EmployeeResponseCommonModel;
 import com.thucchien02.employeeservice.command.data.Employee;
 import com.thucchien02.employeeservice.command.data.EmployeeRepository;
-import com.thucchien02.employeeservice.query.model.EmployeeResponseModel;
+import com.thucchien02.commonservice.model.EmployeeResponseCommonModel;
 import com.thucchien02.employeeservice.query.queries.GetAllEmployeeQuery;
-import com.thucchien02.employeeservice.query.queries.GetDetailEmployeeQuery;
+import com.thucchien02.commonservice.query.GetDetailEmployeeQuery;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +19,10 @@ public class EmployeeProjection {
     private EmployeeRepository employeeRepository;
 
     @QueryHandler
-    public List<EmployeeResponseModel> handle(GetAllEmployeeQuery query){
+    public List<EmployeeResponseCommonModel> handle(GetAllEmployeeQuery query){
         List<Employee> listEmployee = employeeRepository.findAllByIsDisciplined(query.getIsDisciplined());
         return listEmployee.stream().map(employee -> {
-            EmployeeResponseModel model = new EmployeeResponseModel();
+            EmployeeResponseCommonModel model = new EmployeeResponseCommonModel();
             BeanUtils.copyProperties(employee,model);
             return model;
         }).toList();
