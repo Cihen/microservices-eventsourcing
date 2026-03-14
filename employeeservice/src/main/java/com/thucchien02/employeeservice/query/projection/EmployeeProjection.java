@@ -5,7 +5,7 @@ import com.thucchien02.employeeservice.command.data.Employee;
 import com.thucchien02.employeeservice.command.data.EmployeeRepository;
 import com.thucchien02.employeeservice.query.model.EmployeeResponseModel;
 import com.thucchien02.employeeservice.query.queries.GetAllEmployeeQuery;
-import com.thucchien02.commonservice.queries.GetDetailEmployeeQuery;
+import com.thucchien02.employeeservice.query.queries.GetDetailEmployeeQuery;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@ package com.thucchien02.employeeservice.query.controller;
 import com.thucchien02.commonservice.model.EmployeeResponseCommonModel;
 import com.thucchien02.employeeservice.query.model.EmployeeResponseModel;
 import com.thucchien02.employeeservice.query.queries.GetAllEmployeeQuery;
-import com.thucchien02.commonservice.queries.GetDetailEmployeeQuery;
+import com.thucchien02.employeeservice.query.queries.GetDetailEmployeeQuery;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
