@@ -26,7 +26,32 @@ spring:
                 redis-rate-limiter.burstCapacity: 20
                 redis-rate-limiter.requestedTokens: 1
             - KeyAuthFilter
-
+        - id: bookservice
+          uri: lb://bookservice
+          predicates:
+            - Path=/api/v1/books/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                redis-rate-limiter.requestedTokens: 1
+            - KeyAuthFilter
+        - id: userservice
+          uri: http://localhost:9005
+          predicates:
+            - Path=/api/v1/users/**
+          filters:
+            - name: JwtHeaderFilter
+        - id: userservice-public
+          uri: http://localhost:9005
+          predicates:
+            - Path=/api/v1/public/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/realms/thucchien02
 
 eureka:
   instance:
